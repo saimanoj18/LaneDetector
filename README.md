@@ -18,13 +18,15 @@ Please refer to the code for implementation details
 5. Keep only the edges that lie in the ROI
 6. Apply Hough Transform and find line segments
 7. From the found line segments only keep the line segments following these steps as shown below:
-  1. a)Divide the image into two halves, i.e., left half and right half.
-  2. b)All the line segments in the left half should have negative slope and all the line segments in the right half should have positive slope. We call this as **slope test**.
-  3. c)So based on the above slope test, filter the line segments and keep only the lines that follow the above criterion. Please look at the PDF file for illustration of the **slope test**.
-  4. d)From the remaining line segments, find the tips or the end points, i.e., what is the lowest and the highest (x,y) coordinates in each halves.
-  5. e)Based on these tips we find the line equation in each half.
-  6. f)As the line segments do not span the whole space or they can be broken, so from the found line equation, we estimate (x1,y1) and (x2,y2) that make a fully connected line. In this (x1,y1) and (x2,y2), we know y-coordinated based on the length of the line we want to have, and we are estimating the x-coordinates from the line equation.
-  7. g)Draw these lines on the image on the image.
+```
+  a)Divide the image into two halves, i.e., left half and right half.
+  b)All the line segments in the left half should have negative slope and all the line segments in the right half should have positive slope. We call this as **slope test**.
+  c)So based on the above slope test, filter the line segments and keep only the lines that follow the above criterion. Please look at the PDF file for illustration of the **slope test**.
+  d)From the remaining line segments, find the tips or the end points, i.e., what is the lowest and the highest (x,y) coordinates in each halves.
+  e)Based on these tips we find the line equation in each half.
+  f)As the line segments do not span the whole space or they can be broken, so from the found line equation, we estimate (x1,y1) and (x2,y2) that make a fully connected line. In this (x1,y1) and (x2,y2), we know y-coordinated based on the length of the line we want to have, and we are estimating the x-coordinates from the line equation.
+  g)Draw these lines on the image on the image.
+  ```
 8. Weigh and add images to show annotated lines in the video.
 
 
@@ -47,4 +49,5 @@ Please refer to the code for implementation details
 3. My initial experiments have shown that proper ROI selection with the proposed method detects right lane very well in the _challenge.mp4_  in the RGB color space_._ So, another enhancement would be to make the lane detector work simultaneously on both color spaces, HSV and RGB and then append the detected lines (sometimes lane detector from one space may not detect any line segments), apply RANSAC to find the lane that satisfies most of the detected lanes.
 
 Sai Manoj Prakhya
+
 June 3, 2017
