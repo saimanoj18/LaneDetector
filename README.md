@@ -2,7 +2,12 @@
 
 The below explanation is also available as PDF file named as DESRCIPTION.pdf
 
+**1.LaneDetection_Sai_submission.py is the file to evaluate on the solidWhiteRight.mp4 and solidYellowLeft videos**
+**2.Only_Left_Lane_Implemented is a working copy of the Lane Detector on Challenge video**
+
 Please refer to the code for implementation details
+
+***Description of the code:***
 
 **Pipeline:**
 
